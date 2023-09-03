@@ -6,4 +6,38 @@ html,
 body,
 :root {
   width: 100%;
+  font-family: Roboto;
+}
+
+.slick-slider .slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.slick-active .dot{
+  background-color: black;
+}
+
+.articles img{
+  display: block;
+  margin: 0 auto;
+}
+.articles p{
+  text-indent: 2em;
+  margin: 2.5rem 0;
+  @media screen and (max-width: 768px)  {
+    margin: 1.25rem 0;
+  };
+  @media screen and (max-width: 640px)  {
+    margin: 1rem 0;
+  };
 }
