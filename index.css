@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  /*日间主题配色，使用rgb色卡*/
+  :root{
+    --color-text: 12 7 37;
+    --color-background: 253 253 253;
+    --color-primary: 41 31 100;
+    --color-secondary: 243 242 246;
+    --color-accent:  124 0 0;
+  }
+  /*用户偏好暗色时，切换夜间主题配色*/
+  @media(prefers-color-scheme:dark){
+    :root{
+      --color-text:  250  250  250;
+      --color-background:  5  5  5;
+      --color-primary:  41  31  100;
+      --color-secondary:  30  26  41;
+      --color-accent:  255  102  102;
+    }
+  }
+  /*当在页面填写相关属性会覆盖原主题
+  如在layout.tsx修改 <html lang='zh' data-theme='light'>，会将主题色变为日间主题
+  变为夜间主题*/
+  :root[data-theme="dark"]{
+    --color-text:  250  250  250;
+    --color-background:  5  5  5;
+    --color-primary:  41  31  100;
+    --color-secondary:  30  26  41;
+    --color-accent:  255  102  102;
+  }
+  :root[data-theme="light"]{
+    --color-text:  12  7  37;
+    --color-background:  253  253  253;
+    --color-primary:  41  31  100;
+    --color-secondary:  243  242  246;
+    --color-accent:  124  0  0;
+  }
+}
